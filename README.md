@@ -157,7 +157,7 @@ void withdraw(float& balance, float amount) {
 
 // Function to handle ATM operations
 void startATM() {
-    float balance = 0.0;
+    float balance = 1000;
     int choice;
     float amount;
     int pin = 1234; // Pre-set PIN for the ATM
