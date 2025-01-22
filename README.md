@@ -123,7 +123,6 @@ Exiting ATM. Thank you for using our service!
 
 ## 💻 Example Code:
 
-```
 #include <iostream>
 using namespace std;
 
@@ -161,7 +160,30 @@ void startATM() {
     float balance = 0.0;
     int choice;
     float amount;
+    int pin = 1234; // Pre-set PIN for the ATM
+    int enteredPin;
+    int attempts = 0;
 
+    // PIN verification loop
+    while (attempts < 3) {
+        cout << "Enter your 4-digit PIN: ";
+        cin >> enteredPin;
+
+        if (enteredPin == pin) {
+            cout << "PIN verified successfully.\n";
+            break; // Exit the PIN verification loop
+        } else {
+            attempts++;
+            if (attempts < 3) {
+                cout << "Incorrect PIN. You have " << (3 - attempts) << " attempt(s) left.\n";
+            } else {
+                cout << "Incorrect PIN. Your account is now locked.\n";
+                return; // Lock account after 3 failed attempts
+            }
+        }
+    }
+
+    // ATM menu and operations
     while (true) {
         cout << "\nATM Menu:\n";
         cout << "1. Check Balance\n";
@@ -198,4 +220,3 @@ int main() {
     startATM(); // Start the ATM operation
     return 0;
 }
-```
