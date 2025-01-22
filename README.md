@@ -123,26 +123,26 @@ Exiting ATM. Thank you for using our service!
 
 ## 💻 Example Code:
 
-#include <iostream>
-using namespace std;
+    #include <iostream>
+    using namespace std;
 
-// Function to check balance
-void checkBalance(float balance) {
+    // Function to check balance
+    void checkBalance(float balance) {
     cout << "Your current balance is: $" << balance << endl;
-}
+    }
 
-// Function to deposit money
-void deposit(float& balance, float amount) {
+    // Function to deposit money
+    void deposit(float& balance, float amount) {
     if (amount > 0) {
         balance += amount;
         cout << "You have successfully deposited: $" << amount << endl;
     } else {
         cout << "Deposit amount must be positive." << endl;
     }
-}
+    }
 
-// Function to withdraw money
-void withdraw(float& balance, float amount) {
+    // Function to withdraw money
+    void withdraw(float& balance, float amount) {
     if (amount <= balance) {
         if (amount > 0) {
             balance -= amount;
@@ -153,10 +153,10 @@ void withdraw(float& balance, float amount) {
     } else {
         cout << "Insufficient balance for withdrawal." << endl;
     }
-}
+    }
 
-// Function to handle ATM operations
-void startATM() {
+    // Function to handle ATM operations
+    void startATM() {
     float balance = 1000;
     int choice;
     float amount;
@@ -169,7 +169,7 @@ void startATM() {
         cout << "Enter your 4-digit PIN: ";
         cin >> enteredPin;
 
-        if (enteredPin == pin) {
+    if (enteredPin == pin) {
             cout << "PIN verified successfully.\n";
             break; // Exit the PIN verification loop
         } else {
@@ -214,9 +214,9 @@ void startATM() {
                 cout << "Invalid choice! Please enter a number between 1 and 4.\n";
         }
     }
-}
+    }
 
-int main() {
+    int main() {
     startATM(); // Start the ATM operation
     return 0;
-}
+    }
